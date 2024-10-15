@@ -1,0 +1,17 @@
+.home-app {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.home-pre-wrapper {
+  position: relative;
+  top: 25%;
+}
+
+.home-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
