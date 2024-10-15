@@ -6,23 +6,25 @@ import "./styles/ImageGallery.css";
  */
 export const ImageGallery = ({ images }) => {
   return (
-    <div className="image-gallery columns-1 sm:columns-2 lg:columns-3 gap-4">
+    <>
       {images.length > 0 ? (
-        images.map((image, index) => (
-          <div key={`${image.id}${index}`} className="mb-4 break-inside-avoid">
-            <img
-              key={image.id}
-              src={image.url}
-              alt={image.title}
-              className="image-gallery-snap w-full object-over"
-            />
-          </div>
-        ))
+        <div className="image-gallery columns-1 sm:columns-2 lg:columns-3 gap-4">
+          {images.map((image, index) => (
+            <div key={`${image.id}${index}`} className="mb-4 break-inside-avoid">
+              <img
+                key={image.id}
+                src={image.url}
+                alt={image.title}
+                className="image-gallery-snap w-full object-over"
+              />
+            </div>
+          ))}
+        </div>
       ) : (
         <div className="text-center">
           <p>No images were found :(</p>
         </div>
       )}
-    </div>
+    </>
   );
 };

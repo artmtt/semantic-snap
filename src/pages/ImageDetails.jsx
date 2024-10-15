@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 export default function ImageDetails({ image, onClose }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,10 +25,10 @@ export default function ImageDetails({ image, onClose }) {
         onClick={handleClose}
       ></div>
       <div className="bg-white rounded-lg shadow-xl w-full max-w-4xl h-[90vh] mx-auto z-10 overflow-hidden flex flex-col">
-        <div className="p-4 border-b flex items-center">
+        <div className="p-4 border-b flex items-center relative">
           <button
             onClick={handleClose}
-            className="text-gray-600 hover:text-gray-800 transition-colors mr-4 font-bold text-2xl"
+            className="absolute left-4 text-gray-600 hover:text-gray-800 transition-colors font-bold text-2xl"
           >
             ←
           </button>
@@ -53,7 +53,14 @@ export default function ImageDetails({ image, onClose }) {
             </div>
             <div>
               <p className="text-sm font-semibold text-gray-600">Metadata</p>
-              <p className="text-2xl text-gray-800">N/A</p>
+              <ul className="text-gray-800">
+                <li>
+                  Width: {image.width}px
+                </li>
+                <li>
+                  Height: {image.height}px
+                </li>
+              </ul>
             </div>
             <div className="col-span-2">
               <p className="text-sm font-semibold text-gray-600">

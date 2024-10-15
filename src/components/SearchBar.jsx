@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid';
 
-export const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+export const SearchBar = ({ onSearch, initialQuery = '', required = true }) => {
+  const [query, setQuery] = useState(initialQuery);
 
   const handleQueryChange = (event) => {
     setQuery(event.target.value);
@@ -22,7 +22,7 @@ export const SearchBar = ({ onSearch }) => {
         value={query}
         onChange={handleQueryChange}
         maxLength={100000}
-        required
+        required={required}
       />
       <button
         type="submit"

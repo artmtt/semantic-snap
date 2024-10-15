@@ -17,31 +17,40 @@ const SearchResults = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
-    if (query) {
-      setLoading(true);
-      try {
-        // Call API
-        const data = ImagesResult();
-        setImages(data);
-      } catch (error) {
-        console.error("Error while trying to fetch images", error);
-      } finally {
-        setLoading(false);
+    const fetchImages = async () => {
+      if (query) {
+        setLoading(true);
+        try {
+          // Call API
+          const data = await ImagesResult(query);
+          setImages(data);
+        } catch (error) {
+          console.error("Error while trying to fetch images", error);
+        } finally {
+          setLoading(false);
+        }
       }
-    }
+    };
+
+    fetchImages();
   }, [query]);
 
   const handleSearch = (newQuery) => {
+    if (newQuery.length === 0) {
+      newQuery = 'all';
+    }
     setQuery(newQuery);
     navigate(`/searchResults?query=${newQuery}`);
   };
 
   const handleImageClick = (image) => {
-    console.log(image);
+    // console.log(image);
     setSelectedImage({
       src: image.src,
       name: image.alt,
       originalURL: image.src,
+      width: image.width,
+      height: image.height,
     });
   };
 
@@ -53,7 +62,7 @@ const SearchResults = () => {
     <div className="results-app">
       <div className="results-container px-5 py-10 w-full lg:w-4/5">
         <div className="w-full">
-          <SearchBar onSearch={handleSearch} />
+          <SearchBar onSearch={handleSearch} initialQuery={query} required={false} />
         </div>
         <div className="w-full py-5">
           <div
