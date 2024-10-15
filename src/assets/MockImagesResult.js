@@ -2,7 +2,7 @@ export const ImagesResult = async (query) => {
   const data = [
     {
       id: 'i',
-      title: 'Sunset',
+      title: 'Sunset Architecture',
       url: 'https://cdn.pixabay.com/photo/2023/06/14/23/12/sunset-8064078_1280.jpg',
     },
     {
@@ -22,7 +22,7 @@ export const ImagesResult = async (query) => {
     },
     {
       id: 'i018',
-      title: 'Forest',
+      title: 'Forest Pathway',
       url: 'https://cdn.pixabay.com/photo/2022/09/20/10/11/street-7467503_1280.jpg',
     },
     {
@@ -32,12 +32,12 @@ export const ImagesResult = async (query) => {
     },
     {
       id: 'i555',
-      title: 'Lantern',
+      title: 'Lantern in Japan',
       url: 'https://cdn.pixabay.com/photo/2018/09/30/13/18/lantern-3713493_1280.jpg',
     },
     {
       id: 'i020',
-      title: 'Street',
+      title: 'Dark Street',
       url: 'https://cdn.pixabay.com/photo/2022/10/16/19/19/girl-7525969_1280.jpg',
     },
     {
@@ -66,7 +66,7 @@ export const ImagesResult = async (query) => {
   };
 
   // Title filter for now
-  const filteredData = (query.length > 0 && query !== 'all') ?
+  const filteredData = query.length > 0 ?
     data.filter((image) =>
       image.title.toLowerCase().includes(query.toLowerCase())
     )

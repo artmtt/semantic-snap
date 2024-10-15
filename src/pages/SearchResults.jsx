@@ -36,9 +36,6 @@ const SearchResults = () => {
   }, [query]);
 
   const handleSearch = (newQuery) => {
-    if (newQuery.length === 0) {
-      newQuery = 'all';
-    }
     setQuery(newQuery);
     navigate(`/searchResults?query=${newQuery}`);
   };
@@ -62,7 +59,7 @@ const SearchResults = () => {
     <div className="results-app">
       <div className="results-container px-5 py-10 w-full lg:w-4/5">
         <div className="w-full">
-          <SearchBar onSearch={handleSearch} initialQuery={query} required={false} />
+          <SearchBar onSearch={handleSearch} initialQuery={query} />
         </div>
         <div className="w-full py-5">
           <div
