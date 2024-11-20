@@ -17,7 +17,7 @@ const Home = () => {
             <h2 className="home-logo mb-8 text-center text-primary text-4xl font-bold">
               SemanticSnap
             </h2>
-            <div className="w-full">
+            <div className="w-full drop-shadow-md">
               <SearchBar onSearch={handleSearch} />
             </div>
           </div>

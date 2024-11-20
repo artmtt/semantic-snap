@@ -57,8 +57,8 @@ const SearchResults = () => {
 
   return (
     <div className="results-app">
-      <div className="results-container px-5 py-10 w-full lg:w-4/5">
-        <div className="w-full">
+      <div className="results-container px-5 py-7 w-full lg:w-4/5">
+        <div className="w-full drop-shadow-md">
           <SearchBar onSearch={handleSearch} initialQuery={query} />
         </div>
         <div className="w-full py-5">

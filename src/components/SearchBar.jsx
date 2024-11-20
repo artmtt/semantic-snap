@@ -26,9 +26,9 @@ export const SearchBar = ({ onSearch, initialQuery = '', required = true }) => {
       />
       <button
         type="submit"
-        className="absolute right-4 focus:outline-none"
+        className="absolute right-4 focus:outline-none opacity-35 hover:opacity-60"
       >
-        <MagnifyingGlassIcon className="h-6 text-secondary opacity-35" />
+        <MagnifyingGlassIcon className="h-6 text-secondary" />
       </button>
     </form>
   );
