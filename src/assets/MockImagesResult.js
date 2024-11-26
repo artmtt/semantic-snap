@@ -10,7 +10,7 @@ export const ImagesResult = async (query) => {
   var response = xmlHttp.responseText;
   const data = JSON.parse(response);
 
-  console.log(response);
+  //console.log(response);
 
   const getImageDimensions = (url) => {
     return new Promise((resolve, reject) => {
