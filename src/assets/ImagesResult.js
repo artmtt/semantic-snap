@@ -22,14 +22,16 @@ export const ImagesResult = async (query) => {
   };
 
   const addImageMetadata = async (images) => {
-    const promises = images.map(async (image) => {
-      const dimensions = await getImageDimensions(image.url);
-      return { ...image, ...dimensions };
-    });
+    const promises = images.map((image) => 
+      getImageDimensions(image.url)
+        .then((dimensions) => ({ ...image, ...dimensions }))
+        .catch((error) => null) // Null if img failed to load
+    );
 
-    return Promise.all(promises);
+    const promiseResults = await Promise.all(promises);
+    return promiseResults.filter((result) => result !== null);
   };
 
-  const dataWithMeta = await addImageMetadata(filteredData);
+  const dataWithMeta = await addImageMetadata(data);
   return dataWithMeta;
 }
