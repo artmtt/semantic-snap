@@ -32,7 +32,7 @@ export default function ImageDetails({ image, onClose }) {
           >
             ←
           </button>
-          <h2 className="text-2xl text-center font-semibold text-gray-800 flex-grow truncate">
+          <h2 className="text-2xl text-center font-semibold text-gray-800 flex-grow truncate px-[1.5rem]">
             {image.name}
           </h2>
         </div>
@@ -49,7 +49,7 @@ export default function ImageDetails({ image, onClose }) {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="text-sm font-semibold text-gray-600">Image Name</p>
-              <p className="text-2xl text-gray-800">{image.name}</p>
+              <p className="text-2xl text-gray-800 truncate">{image.name}</p>
             </div>
             <div>
               <p className="text-sm font-semibold text-gray-600">Metadata</p>
