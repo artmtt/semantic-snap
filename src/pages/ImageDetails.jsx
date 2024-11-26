@@ -25,14 +25,14 @@ export default function ImageDetails({ image, onClose }) {
         onClick={handleClose}
       ></div>
       <div className="bg-white rounded-lg shadow-xl w-full max-w-4xl h-[90vh] mx-auto z-10 overflow-hidden flex flex-col">
-        <div className="p-4 border-b flex items-center relative">
+        <div className="p-4 border-b flex items-center justify-center relative">
           <button
             onClick={handleClose}
             className="absolute left-4 text-gray-600 hover:text-gray-800 transition-colors font-bold text-2xl"
           >
             ←
           </button>
-          <h2 className="text-2xl text-center font-semibold text-gray-800 flex-grow truncate px-[1.5rem]">
+          <h2 className="text-2xl text-center font-semibold text-gray-800 flex-grow truncate max-w-[calc(100%-100px)]">
             {image.name}
           </h2>
         </div>
