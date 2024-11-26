@@ -58,20 +58,31 @@ const SearchResults = () => {
   return (
     <div className="results-app">
       <div className="results-container px-5 py-7 w-full lg:w-4/5">
+        <div className="w-full">
+          <h2 className="home-logo mb-4 text-center text-primary text-4xl font-bold">
+            SemanticSnap
+          </h2>
+        </div>
         <div className="w-full drop-shadow-md">
           <SearchBar onSearch={handleSearch} initialQuery={query} />
         </div>
         <div className="w-full py-5">
-          <div
-            onClick={(e) => {
-              const img = e.target.closest("img");
-              if (img) {
-                handleImageClick(img);
-              }
-            }}
-          >
-            <ImageGallery key={query} images={images} />
-          </div>
+          {loading ? (
+            <div className="loading-indicator text-center py-5">
+              <p>Loading images...</p>
+            </div>
+          ) : (
+            <div
+              onClick={(e) => {
+                const img = e.target.closest("img");
+                if (img) {
+                  handleImageClick(img);
+                }
+              }}
+            >
+              <ImageGallery key={query} images={images} />
+            </div>
+          )}
         </div>
       </div>
       {selectedImage && (
