@@ -30,13 +30,6 @@ export const ImagesResult = async (query) => {
     return Promise.all(promises);
   };
 
-  // Title filter for now
-  const filteredData = query.length > 0 ?
-    data.filter((image) =>
-      image.title.toLowerCase().includes(query.toLowerCase())
-    )
-    : data;
-
   const dataWithMeta = await addImageMetadata(filteredData);
   return dataWithMeta;
 }

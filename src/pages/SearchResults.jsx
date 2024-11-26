@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { SearchBar } from "../components/SearchBar";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ImageGallery } from "../components/ImageGallery";
-import { ImagesResult } from "../assets/MockImagesResult";
+import { ImagesResult } from "../assets/ImagesResult";
 import ImageDetails from "./ImageDetails";
 
 const SearchResults = () => {
